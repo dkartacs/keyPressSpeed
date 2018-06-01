@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Keypress speed test</title>
+  </head>
+  <body>
+	<h1>Good news everyone!</h1>
+<input autofocus id="input"/>
+<div id="div"></div>
+<script>
+	'use strict'
+var start = new Date().getTime();
+var div = $("#div");
+$("#input").keypress(function(e) {
+				console.log(e);
+        var elapsed = new Date().getTime() - start;
+        div.append("<div>" + String.fromCharCode(e.keyCode) + ":" + elapsed + "ms </div>");
+        start = new Date().getTime();
+});
+
+	</script>
+  </body>
+</html>
